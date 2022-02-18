@@ -20,10 +20,14 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
+            if(screenValue === '' || screenValue === undefined){
+                screenValue=screen.value;
+            }
             screen.value = eval(screenValue);
         }
         else if(buttonText == '⌫'){
-            screen.value = screen.value.slice(0, - 1);
+            screenValue = screenValue.slice(0, - 1);
+            screen.value= screenValue;
         }
         else {
             screenValue += buttonText;
@@ -32,6 +36,20 @@ for (item of buttons) {
 
     })
 }
-function backSpace(){
-    screenView.value = screenView.value.slice(0, - 1);
-}
+
+document.addEventListener('keydown',(event)=>{
+    const keyname=event.key;
+    console.log(keyname);
+    if(keyname==='=' || keyname==='Enter'){
+        event.preventDefault();
+        if(screenValue === '' || screenValue === undefined){
+            screenValue=screen.value;
+        }
+        screen.value = eval(screenValue);
+    }else{
+        screenValue=screen.value;
+    }
+})
+// function backSpace(){
+//     screenView.value = screenView.value.slice(0, - 1);
+// }
