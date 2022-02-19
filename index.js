@@ -24,6 +24,7 @@ for (item of buttons) {
                 operationString=inputBar.value;
             }
             inputBar.value = eval(operationString);
+             operationString= eval(operationString);
         }
         else if(buttonText == '⌫'){
             operationString = operationString.slice(0, - 1);
@@ -46,6 +47,8 @@ document.addEventListener('keydown',(event)=>{
             operationString=inputBar.value;
         }
         inputBar.value = eval(operationString);
+        operationString= eval(operationString);
+
     }else{
         operationString=inputBar.value;
     }
