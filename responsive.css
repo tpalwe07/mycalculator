@@ -1,3 +1,6 @@
-body{
-    height: 100vh;
+.calculator{
+    height: 450px;
+}
+button:hover{ 
+    background-color:rgb(214, 130, 61) ;
 }
