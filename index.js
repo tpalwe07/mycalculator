@@ -1,37 +1,37 @@
-let screen = document.getElementById('screen');
+let inputBar = document.getElementById('inputBar');
 buttons = document.querySelectorAll('button');
-let screenValue = '';
+let operationString = '';
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         buttonText = e.target.innerText;
         console.log('Button text is ', buttonText);
         if (buttonText == 'x') {
             buttonText = '*';
-            screenValue += buttonText;
-            screen.value = screenValue;
+            operationString += buttonText;
+            inputBar.value = operationString;
         }
         else if (buttonText == 'C') {
-            screenValue = "";
-            screen.value = screenValue;
+            operationString = "";
+            inputBar.value = operationString;
         }
         else if (buttonText == '÷') {
             buttonText = '/';
-            screenValue += buttonText;
-            screen.value = screenValue;
+            operationString += buttonText;
+            inputBar.value = operationString;
         }
         else if (buttonText == '=') {
-            if(screenValue === '' || screenValue === undefined){
-                screenValue=screen.value;
+            if(operationString === '' || operationString === undefined){
+                operationString=inputBar.value;
             }
-            screen.value = eval(screenValue);
+            inputBar.value = eval(operationString);
         }
         else if(buttonText == '⌫'){
-            screenValue = screenValue.slice(0, - 1);
-            screen.value= screenValue;
+            operationString = operationString.slice(0, - 1);
+            inputBar.value= operationString;
         }
         else {
-            screenValue += buttonText;
-            screen.value = screenValue;
+            operationString += buttonText;
+            inputBar.value = operationString;
         }
 
     })
@@ -42,12 +42,12 @@ document.addEventListener('keydown',(event)=>{
     console.log(keyname);
     if(keyname==='=' || keyname==='Enter'){
         event.preventDefault();
-        if(screenValue === '' || screenValue === undefined){
-            screenValue=screen.value;
+        if(operationString === '' || operationString === undefined){
+            operationString=inputBar.value;
         }
-        screen.value = eval(screenValue);
+        inputBar.value = eval(operationString);
     }else{
-        screenValue=screen.value;
+        operationString=inputBar.value;
     }
 })
 // function backSpace(){
