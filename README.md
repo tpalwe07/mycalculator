@@ -1,5 +1,5 @@
 # My  Calculator (JavaScript)
 ### Hello folks, This is my first web project build using HTML, CSS, JavaScript.
-Do visit my first calculator project. [Click Here](https://tejascalculator.netlify.app/).
+Do visit my first calculator project. [Click Here](https://tejascalculator.netlify.app/){:target="_blank"}.
 
 ![Preview Image](./PreviewIMG.png)
